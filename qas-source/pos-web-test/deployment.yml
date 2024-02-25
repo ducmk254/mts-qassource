@@ -1,0 +1,28 @@
+#Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: posmutosi-test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: posmutosi-test
+  template:
+    metadata:
+      labels:
+        app: posmutosi-test
+    spec:
+      containers:
+        - name: posmutosi-test
+          image: registry.mutosi.com/pos_test:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 250m
+      imagePullSecrets:
+        - name: credentials-registry
+      nodeSelector:
+        magnum.openstack.org/nodegroup: omni-node-group-2

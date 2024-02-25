@@ -1,0 +1,36 @@
+#Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adminmutosi
+  namespace: mts-qas
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: adminmutosi
+  template:
+    metadata:
+      labels:
+        app: adminmutosi
+    spec:
+      volumes:
+        - name: pv-ad-nfs
+          persistentVolumeClaim:
+            claimName: pvc-ad-nfs
+      containers:
+        - name: adminmutosi
+          image: registry.mutosi.com/admin:latest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 250m
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html
+              name: pv-ad-nfs
+      imagePullSecrets:
+        - name: credentials-registry
+      nodeSelector:
+        magnum.openstack.org/nodegroup: omni-node-group-2

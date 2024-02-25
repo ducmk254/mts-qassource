@@ -1,0 +1,35 @@
+#Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: posmutosi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: posmutosi
+  template:
+    metadata:
+      labels:
+        app: posmutosi
+    spec:
+      volumes:
+        - name: pv-pos-nfs
+          persistentVolumeClaim:
+            claimName: pvc-pos-nfs
+      containers:
+        - name: posmutosi
+          image: registry.mutosi.com/pos:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html
+              name: pv-pos-nfs
+          resources:
+            requests:
+              cpu: 250m
+      imagePullSecrets:
+        - name: credentials-registry
+      nodeSelector:
+        magnum.openstack.org/nodegroup: omni-node-group-2

@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-backendmutosi
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+
+    # SSL Settings
+    #alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
+    #alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-1:829949757905:certificate/1a9b8917-92d1-4e41-9adb-c28eae6146a9
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+
+    # Group settings
+    alb.ingress.kubernetes.io/group.name: mutosi-omni
+
+spec:
+  # tls:
+  # - hosts:
+  #   - uat-api-mutosi.newweb.vn
+  #   secretName: mtscert
+  rules:
+  - host: api-mutosi-cmc.newweb.vn
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: backendmutosi-service
+            port:
+              number: 80

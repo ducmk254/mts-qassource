@@ -1,0 +1,35 @@
+#Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apivpbankmutosi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: apivpbankmutosi
+  template:
+    metadata:
+      labels:
+        app: apivpbankmutosi
+    spec:
+      volumes:
+        - name: pv-api-vpbank-nfs
+          persistentVolumeClaim:
+            claimName: pvc-api-vpbank-nfs
+      containers:
+        - name: apivpbankmutosi
+          image: registry.mutosi.com/backend:latest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 250m
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /var/www/html
+              name: pv-api-vpbank-nfs
+      imagePullSecrets:
+        - name: credentials-registry
+      nodeSelector:
+        magnum.openstack.org/nodegroup: omni-node-group-2

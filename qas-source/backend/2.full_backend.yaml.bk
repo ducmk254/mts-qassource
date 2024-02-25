@@ -1,0 +1,98 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mts-cert-qas
+  namespace: dev-qas
+type: kubernetes.io/tls
+data:
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUdRakNDQlNxZ0F3SUJBZ0lNSTNETG5rZjBMcUFENnB4eE1BMEdDU3FHU0liM0RRRUJDd1VBTUV3eEN6QUoKQmdOVkJBWVRBa0pGTVJrd0Z3WURWUVFLRXhCSGJHOWlZV3hUYVdkdUlHNTJMWE5oTVNJd0lBWURWUVFERXhsQgpiSEJvWVZOVFRDQkRRU0F0SUZOSVFUSTFOaUF0SUVjME1CNFhEVEl6TURZd05qRXhOVEUwT0ZvWERUSTBNRGN3Ck56RXhOVEUwTjFvd0Z6RVZNQk1HQTFVRUF3d01LaTV0ZFhSdmMya3VZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEIKQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBc3AzVGN6WmhOV0c5QnB6dkFtZUpoWWtIQXllQzdIT0ZqeTZRNm5IdwpKL3d4SnNOZXlPRXRZZFZtOWJSdjgyNitjY052TTdRank5Vk1KOTlzZFFTQ2dYY21ibG1qVzVKMnBTYmhIRGY3CnIvZmFqT0FiQTVpZGNTN2YwTlBoNmRNbXF4S3c3Q3VhK1FGaTBlYWpMWThGNUErY0ErVUNzS1ZuL0xyMGxWaXcKaVJpMC9aZzZ1bkpnNEwyTEdqOXVaL2FwcERzVloydC9kL2JKNjdKbUcrb2VmM3YxczNTeDh0NkwwU3gwbGtFMwp1dE04c3JURGlzNkZVd2Z5cDlmZVFSdUdYOVd5ZHVIQWYvQW54T2Zvc1BDNk40T2hoUFJvMDROdkt4cmdmYXlxCjdMYXNuS05qd2VjYTJ2SUVmOExWOC9zSmJsNkdFYWQ4UkV1cmtPVHY4MGc0SXdJREFRQUJvNElEVnpDQ0ExTXcKRGdZRFZSMFBBUUgvQkFRREFnV2dNSUdUQmdnckJnRUZCUWNCQVFTQmhqQ0JnekJHQmdnckJnRUZCUWN3QW9ZNgphSFIwY0RvdkwzTmxZM1Z5WlM1bmJHOWlZV3h6YVdkdUxtTnZiUzlqWVdObGNuUXZZV3h3YUdGemMyeGpZWE5vCllUSTFObWMwTG1OeWREQTVCZ2dyQmdFRkJRY3dBWVl0YUhSMGNEb3ZMMjlqYzNBdVoyeHZZbUZzYzJsbmJpNWoKYjIwdllXeHdhR0Z6YzJ4allYTm9ZVEkxTm1jME1GY0dBMVVkSUFSUU1FNHdDQVlHWjRFTUFRSUJNRUlHQ2lzRwpBUVFCb0RJS0FRTXdOREF5QmdnckJnRUZCUWNDQVJZbWFIUjBjSE02THk5M2QzY3VaMnh2WW1Gc2MybG5iaTVqCmIyMHZjbVZ3YjNOcGRHOXllUzh3Q1FZRFZSMFRCQUl3QURCQkJnTlZIUjhFT2pBNE1EYWdOS0F5aGpCb2RIUncKT2k4dlkzSnNMbWRzYjJKaGJITnBaMjR1WTI5dEwyRnNjR2hoYzNOc1kyRnphR0V5TlRabk5DNWpjbXd3SXdZRApWUjBSQkJ3d0dvSU1LaTV0ZFhSdmMya3VZMjl0Z2dwdGRYUnZjMmt1WTI5dE1CMEdBMVVkSlFRV01CUUdDQ3NHCkFRVUZCd01CQmdnckJnRUZCUWNEQWpBZkJnTlZIU01FR0RBV2dCUlB5Nnlvd3UrcjNZTnZhNy9PbUQxY1dDVjIKRlRBZEJnTlZIUTRFRmdRVUNIdVlqdzdIS2RQZXJGOTdzM3ZZbkZtZkJtRXdnZ0YrQmdvckJnRUVBZFo1QWdRQwpCSUlCYmdTQ0FXb0JhQUIyQUVpdzQydmFwa2MwRCtWcUF2cWRNT3NjVWdITFZ0MHNnZG03djZzNTJJUnpBQUFCCmlKQ01ueEVBQUFRREFFY3dSUUlnZE84MWJTN2F2RG1EV0J4ekpyNGVlK1M2NWJoTGVneVNLYnhMMk1rT21EZ0MKSVFERVVCZEZUMWdUaytzNVFzVk1pNmE3Sy8wZ3BsdmUvSERNWlhQanFWVzJXZ0IyQU83TjBHVFYyeHJPeFZ5MwpuYlRORTZJeWgwWjh2T3pldzFGSVdVWnhIN1diQUFBQmlKQ01udnNBQUFRREFFY3dSUUlnT3hRVnEraU1YZUh2CmxUOWNJTnU3d0pldEV6L0VYbmd5c0I3MzAxa1p4QmNDSVFEZGw0a0p2aEpVZzRnWlZ1U1pmdFVQVllJSkVyMDcKa045em9Za2Z6NjE1c1FCMkFIYi9pRDhLdHZ1VlVjSmh6UFdIdWpTMHBNMjdLZHhvUWdxZjVtZE1XanAwQUFBQgppSkNNbno0QUFBUURBRWN3UlFJZ1ViWWt6a0t6TW0wYjhtZmlKVVVXakZQUU1aL3lRc1RNaUJqVklFeVRGZnNDCklRQ25vK3YzZDdRZlJmYjR0bVpZSFNuWW5jY1lIcXNnbkV5SVQrcjBJR1g0Q1RBTkJna3Foa2lHOXcwQkFRc0YKQUFPQ0FRRUFIMFZjZllCT2Zob3M4c0ZhMWpOSjNoN1ZjWHduOTNWRkxUc1JXclhua0E1L0tkUVRQT21mMVhjZwpHOHMxM1ZxblNINnZnMVVCRnlhdVJTajFlZnUvSDNndmJGMUZWVXZRUzI4THo1bWs5OU5sb3p4TkZGWnpJSEptClZOS2pFRE55SElYMFhhRVVRL0c5YUhRSEcrM0huckQybFdLUGZHWWxNemFkdkpDeE9vQzFrWEhIMDJYUi9mL3cKSmFTaTRza2VIcHFxUHFCR25qK3N1WGZIYVYrMm5SU3lvTEU1MmRlR2tidklwNmlTWjliZ0tWNm1PbXBaQlRIcApEeEp2TElpOEdQZjQweWVWZ3pOR09pYWFpOGlvNnlEeDRsVjIvNG1tTkRna0pwaTM2eHBxYkE5cDRzQURoZ0hQCjgvZzBiYTN4aEhzaXN6K2JqVzFaMTF5NkYyZUlGQT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+  tls.key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQ3luZE56Tm1FMVliMEcKbk84Q1o0bUZpUWNESjRMc2M0V1BMcERxY2ZBbi9ERW13MTdJNFMxaDFXYjF0Ry96YnI1eHcyOHp0Q1BMMVV3bgozMngxQklLQmR5WnVXYU5ia25hbEp1RWNOL3V2OTlxTTRCc0RtSjF4THQvUTArSHAweWFyRXJEc0s1cjVBV0xSCjVxTXRqd1hrRDV3RDVRS3dwV2Y4dXZTVldMQ0pHTFQ5bURxNmNtRGd2WXNhUDI1bjlxbWtPeFZuYTM5MzlzbnIKc21ZYjZoNS9lL1d6ZExIeTNvdlJMSFNXUVRlNjB6eXl0TU9Lem9WVEIvS24xOTVCRzRaZjFiSjI0Y0IvOENmRQo1K2l3OExvM2c2R0U5R2pUZzI4ckd1QjlyS3JzdHF5Y28yUEI1eHJhOGdSL3d0WHord2x1WG9ZUnAzeEVTNnVRCjVPL3pTRGdqQWdNQkFBRUNnZ0VBVUhKUEF3d1IraVg4S2RkU3VxV0JSZGh5aFJRdG5tdGxVeGlwQWo2dzZJRm8KYmNuK2pjRUZYSlB0M0dvWkplM1I3cEVVSzVoTnF3ZDFWbHdGa0NxbzBNQ21XWHNiM1NsNU1HYnphbTg0ZDRmTgpNamZaVXVSUXZPSmN3Y1E4Y3NDOElMNjVXcFZGSmpOZW02VWlCMm5zUUV4YmUxR1F4WmlwM2lVaDlZWE5kT0VmCk8vTlQ4bStOU3kwTDRGaUlTWGFvNHdZVFpYa3Qyb1l4RXRxcFl2TWh1anVhZjYvcm1EQXhUNExDLzJIVC9LeXoKQzZLM0tsNThabnFCY042c0tjSkpmUjJ1cjBielFIVDZNcmQ4NnZKcVFVZXd0UENuOUVqWG9rYytjYkJSTnVrMApGRHJMenhONXhQd2ltMEd4eTBHdTR6ZGdsUVJQTUpoZjJPRjBEZEdmRVFLQmdRRHN5QWJLWkM5RDFvSDRNck1pCktPQlpEWGpOQXdvd3BWQ0pKODVFQVVsai9iU2lmUWdMYmJUOUZQS3FZTHVta2U3RzE5NUt5QlIzdENuUWtMSEMKa0w3SXdJdDM2a3dkQVJTb0RXSGk1d1d3RVRTeUJyaWlqRnhWVDBnWTVVWitMSnVPemZSY2xacVVlb2VUM2N6bAplRVVza0pDM3VvNkF4RCtuMEhHejRLeHVTd0tCZ1FEQkhUZmRnNnRrRUxWZUxaaVhNc0V4L0JnZGthT3JyWi9ICkcreVByb0dSd2hndmVqbmVLQVE1aXhOTnN0MXdOeWRMOCt3TlFpdWVlZzk1Y1BsTGJndDdSVUVmc3JBamZ4QkcKNHJWK01SajRUYVkvRkZlU2dtOHFXRTY2T3hqdkp5ditmb01KMC8wQStVVGRFVC9tNnRtd2hieC9HL2RiQkROaQoxd2d0RlZ4V2lRS0JnUUNwZjE3dER0Nk96MFZtcU5SMnhaQWo3M0xrUHlMU1ErVHM2ZVBMNXFma3ZqN0tlbnFCCnc5emx0bE1vQitzTWlEYkhmTXdSK0R3K25HZTZkM25vYjdsQytDSmVpd2hGVXZxNGVpdnlRN0pjb1ZSNWhEb3oKa2dxZXZ3dzdWaFVxU1VCcDc2RFhqZmlFQlZwOFRUQlpxOGpJNkF2UW1lbGM0Qjg1UUF2RTJqWlZGUUtCZ0RkNwplb3AxQXUvcjhQL08zOUZJN3NLNnAvOE8wZFJJUE9pS3VFdUxtb1JUSEhtL2h4S3hzbzBKelJEOHU2dzYzRnB4CkNUZkI5Q0JDOTJFdnVTQVh6TXFzMmdvT1g1YkRNZHo3MDZNZTNncXczSHV4RDN2elo1Ymw2akNOUEJ1eHlHMEUKMGdjbjFiL0szaU1aaXArQWgreTBiN1NoUjA3cUJRMTN0RXlubjNEcEFvR0FhWHZHTEVUTllNL3RCUXk5VXBZWApUZzd4N1NIUExrekJZUW9QbmhMSDR4SlZCbUlqNEJwZ2V2UkMxcks4cEwzakFTNWVkaGpOalBhU2h2c1FRT3JQCmJiUG9lNHZkeEZydmZUYzFLS0JvbHlidGErQVFtd0JySlVJVVk1Rk56MW1HSVBnR1Q5dUhtbEVFeXBzdUN2SjMKdE4wMzBIbUduczMyemR6QjZOcnVmclE9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K
+
+---
+#Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backendmutosi-qas
+  namespace: dev-qas
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: backendmutosi-qas
+  template:
+    metadata:
+      labels:
+        app: backendmutosi-qas
+    spec:
+      volumes:
+        - name: pv-be-nfs-qas
+          persistentVolumeClaim:
+            claimName: pvc-be-nfs-qas
+      containers:
+        - name: backendmutosi-qas
+          image: registry.mutosi.com/backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /var/www/html
+              name: pv-be-nfs-qas
+          resources:
+            requests:
+              cpu: 250m
+      imagePullSecrets:
+        - name: credentials-registry-qas
+      nodeSelector:
+        magnum.openstack.org/nodegroup: qas #default-worker
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backendmutosi-service-qas
+  namespace: dev-qas
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    name: port80
+    targetPort: 80
+    protocol: TCP
+    nodePort: 31619
+  selector:
+    app: backendmutosi-qas
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-backendmutosi-qas
+  namespace: dev-qas
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    #alb.ingress.kubernetes.io/scheme: internet-facing
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    # SSL Settings
+    #alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
+    #alb.ingress.kubernetes.io/ssl-redirect: "443"
+    #cert-manager.io/cluster-issuer: letsencrypt-production #can cho ssl
+    # Group settings
+    #alb.ingress.kubernetes.io/group.name: mutosi-omni
+
+spec:
+  tls:
+    - hosts:
+      - qas-api-omni.mutosi.com
+      secretName: mts-cert-qas
+  rules:
+  - host: qas-api-omni.mutosi.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: backendmutosi-service-qas
+            port:
+              number: 80

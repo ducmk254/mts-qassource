@@ -1,0 +1,35 @@
+#Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontendmutositest
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: frontendmutositest
+  template:
+    metadata:
+      labels:
+        app: frontendmutositest
+    spec:
+      volumes:
+        - name: pv-fe-test-nfs
+          persistentVolumeClaim:
+            claimName: pvc-fe-test-nfs
+      containers:
+        - name: frontendmutositest
+          image: registry.mutosi.com/frontend-test:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html
+              name: pv-fe-test-nfs
+          resources:
+            requests:
+              cpu: 250m
+      imagePullSecrets:
+        - name: credentials-registry
+      nodeSelector:
+        magnum.openstack.org/nodegroup: default-worker

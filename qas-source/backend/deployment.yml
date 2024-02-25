@@ -1,0 +1,36 @@
+#Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backendmutosi-qas
+  namespace: dev-qas
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: backendmutosi-qas
+  template:
+    metadata:
+      labels:
+        app: backendmutosi-qas
+    spec:
+      volumes:
+        - name: pv-be-nfs-qas
+          persistentVolumeClaim:
+            claimName: pvc-be-nfs-qas
+      containers:
+        - name: backendmutosi-qas
+          image: registry.mutosi.com/backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /var/www/html
+              name: pv-be-nfs-qas
+          resources:
+            requests:
+              cpu: 250m
+      imagePullSecrets:
+        - name: credentials-registry-qas
+      nodeSelector:
+        magnum.openstack.org/nodegroup: qas #default-worker
